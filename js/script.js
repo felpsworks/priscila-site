@@ -27,3 +27,41 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 revealEls.forEach(el => observer.observe(el));
+
+// Before/after comparison sliders
+document.querySelectorAll('.ba-frame').forEach(frame => {
+  const handle = frame.querySelector('.ba-handle');
+
+  const setPos = (percent) => {
+    const clamped = Math.min(100, Math.max(0, percent));
+    frame.style.setProperty('--pos', clamped + '%');
+    handle.setAttribute('aria-valuenow', Math.round(clamped));
+  };
+
+  const posFromX = (clientX) => {
+    const rect = frame.getBoundingClientRect();
+    return ((clientX - rect.left) / rect.width) * 100;
+  };
+
+  let dragging = false;
+
+  const onMove = (clientX) => {
+    if (!dragging) return;
+    setPos(posFromX(clientX));
+  };
+
+  frame.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    frame.setPointerCapture(e.pointerId);
+    setPos(posFromX(e.clientX));
+  });
+  frame.addEventListener('pointermove', (e) => onMove(e.clientX));
+  frame.addEventListener('pointerup', () => { dragging = false; });
+  frame.addEventListener('pointercancel', () => { dragging = false; });
+
+  handle.addEventListener('keydown', (e) => {
+    const current = parseFloat(frame.style.getPropertyValue('--pos')) || 50;
+    if (e.key === 'ArrowLeft') { setPos(current - 5); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { setPos(current + 5); e.preventDefault(); }
+  });
+});
