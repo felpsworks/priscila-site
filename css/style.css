@@ -407,43 +407,116 @@ em { font-style: italic; color: var(--gold); }
 .ba-tag-before { left: 16px; }
 .ba-tag-after { right: 16px; }
 
-/* Técnicas */
-.tecnica-card {
+/* Técnicas — cards interativos */
+.tecnica-grid {
   display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  gap: 50px;
-  align-items: center;
-  background: var(--bg);
-  border-radius: var(--radius);
-  padding: 40px;
-  margin-bottom: 30px;
-  border: 1px solid var(--line);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
-.tecnica-card.reverse { grid-template-columns: 1.3fr 0.7fr; }
-.tecnica-card.reverse .tecnica-media { order: 2; }
-.tecnica-media img { border-radius: 14px; }
-.check-list { list-style: none; padding: 0; margin: 18px 0 0; }
+.tecnica-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+}
+.tecnica-media { position: absolute; inset: 0; }
+.tecnica-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s cubic-bezier(.16,.8,.24,1);
+}
+.tecnica-card:hover .tecnica-media img,
+.tecnica-card:focus-within .tecnica-media img,
+.tecnica-card.is-active .tecnica-media img { transform: scale(1.04); }
+
+.tecnica-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20,17,15,0.92) 0%, rgba(20,17,15,0.55) 42%, rgba(20,17,15,0.1) 68%, rgba(20,17,15,0.05) 100%);
+  transition: background .4s ease;
+}
+.tecnica-card:hover .tecnica-overlay,
+.tecnica-card:focus-within .tecnica-overlay,
+.tecnica-card.is-active .tecnica-overlay {
+  background: linear-gradient(to top, rgba(20,17,15,0.96) 0%, rgba(20,17,15,0.72) 50%, rgba(20,17,15,0.2) 75%, rgba(20,17,15,0.08) 100%);
+}
+
+.tecnica-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px;
+  color: #fff;
+}
+.tecnica-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tecnica-content h3 { color: #fff; margin: 0; }
+.tecnica-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity .3s ease, transform .3s ease, background .3s ease, border-color .3s ease;
+}
+.tecnica-icon svg { width: 16px; height: 16px; stroke: #fff; }
+.tecnica-card:hover .tecnica-icon,
+.tecnica-card:focus-within .tecnica-icon,
+.tecnica-card.is-active .tecnica-icon {
+  opacity: 1;
+  transform: translateX(0);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.tecnica-tagline {
+  margin: 10px 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold-light);
+  font-size: 1.02rem;
+}
+.tecnica-reveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .5s cubic-bezier(.16,.8,.24,1);
+}
+.tecnica-card:hover .tecnica-reveal,
+.tecnica-card:focus-within .tecnica-reveal,
+.tecnica-card.is-active .tecnica-reveal { grid-template-rows: 1fr; }
+.tecnica-reveal > div { overflow: hidden; }
+
+.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
 .check-list li {
   position: relative;
-  padding-left: 28px;
-  margin-bottom: 10px;
-  font-size: 0.95rem;
-  color: var(--ink-soft);
+  padding-left: 26px;
+  margin-bottom: 9px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
 }
 .check-list li::before {
   content: "";
   position: absolute;
   left: 0;
   top: 6px;
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: var(--gold-light);
 }
 .check-list li::after {
   content: "";
   position: absolute;
-  left: 5px;
+  left: 4.5px;
   top: 9px;
   width: 6px;
   height: 3px;
@@ -604,11 +677,7 @@ em { font-style: italic; color: var(--gold); }
   }
   .hero-media { order: -1; }
   .cta-media img { max-width: 260px; }
-  .tecnica-card, .tecnica-card.reverse {
-    grid-template-columns: 1fr;
-    padding: 28px;
-  }
-  .tecnica-card.reverse .tecnica-media { order: 0; }
+  .tecnica-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {

@@ -65,3 +65,13 @@ document.querySelectorAll('.ba-frame').forEach(frame => {
     if (e.key === 'ArrowRight') { setPos(current + 5); e.preventDefault(); }
   });
 });
+
+// Técnica cards — tap to expand on touch devices (no :hover available)
+document.querySelectorAll('.tecnica-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.tecnica-card').forEach(other => {
+      if (other !== card) other.classList.remove('is-active');
+    });
+    card.classList.toggle('is-active');
+  });
+});
