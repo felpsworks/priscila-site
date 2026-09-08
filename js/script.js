@@ -66,6 +66,26 @@ document.querySelectorAll('.ba-frame').forEach(frame => {
   });
 });
 
+// Certificado — tilt 3D bem leve ao mover o mouse
+const tilt = document.getElementById('certificadoTilt');
+if (tilt) {
+  const tiltImg = tilt.querySelector('img');
+  const maxTilt = 6;
+
+  tilt.addEventListener('mousemove', (e) => {
+    const rect = tilt.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    const rotateY = (x - 0.5) * maxTilt * 2;
+    const rotateX = (0.5 - y) * maxTilt * 2;
+    tiltImg.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  tilt.addEventListener('mouseleave', () => {
+    tiltImg.style.transform = 'rotateX(0deg) rotateY(0deg)';
+  });
+}
+
 // Técnica cards — tap to expand on touch devices (no :hover available)
 document.querySelectorAll('.tecnica-card').forEach(card => {
   card.addEventListener('click', () => {

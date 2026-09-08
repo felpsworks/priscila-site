@@ -528,11 +528,20 @@ em { font-style: italic; color: var(--gold); }
 /* Certificado */
 .certificado-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 70px;
   align-items: center;
 }
-.certificado-media img { filter: drop-shadow(0 30px 50px rgba(38,34,32,0.3)); }
+.certificado-media {
+  perspective: 1200px;
+}
+.certificado-media img {
+  filter: drop-shadow(0 30px 50px rgba(38,34,32,0.3));
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: transform .4s cubic-bezier(.16,.8,.24,1);
+  will-change: transform;
+}
+.certificado-copy h2 { max-width: 14ch; }
 
 /* CTA final */
 .cta-final { background: var(--ink); color: #fff; }
