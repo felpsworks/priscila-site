@@ -325,6 +325,16 @@ em { font-style: italic; color: var(--gold); }
 }
 .curso-media img { border-radius: var(--radius); box-shadow: 0 30px 60px -30px rgba(38,34,32,0.35); }
 
+.curso-audience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 26px 0 34px;
+}
+.curso-audience-item { padding-left: 16px; border-left: 2px solid var(--gold-light); }
+.curso-audience-item h3 { font-size: 1.05rem; margin: 0 0 6px; }
+.curso-audience-item p { margin: 0; font-size: 0.92rem; }
+
 /* Resultados — comparador antes/depois */
 .section-sub { max-width: 46ch; margin: 0 auto; }
 .ba-row {
@@ -691,6 +701,7 @@ em { font-style: italic; color: var(--gold); }
 
 @media (max-width: 640px) {
   .cards-3 { grid-template-columns: 1fr; }
+  .curso-audience { grid-template-columns: 1fr; gap: 18px; }
   .ba-row { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
   .hero { padding: 50px 0 40px; }
   .section { padding: 60px 0; }
