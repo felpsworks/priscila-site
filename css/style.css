@@ -741,7 +741,7 @@ em { font-style: italic; color: var(--gold); }
 .whatsapp-float svg { width: 21px; height: 21px; fill: #fff; }
 
 .wa-text { display: flex; flex-direction: column; line-height: 1.25; }
-.wa-title { position: relative; display: block; height: 1.2em; overflow: hidden; }
+.wa-title { position: relative; display: block; height: 1.2em; min-width: 152px; overflow: hidden; }
 .wa-title-default,
 .wa-title-hover {
   display: block;
