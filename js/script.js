@@ -2,17 +2,19 @@
 const header = document.querySelector('.site-header');
 const navToggle = document.getElementById('navToggle');
 
-navToggle.addEventListener('click', () => {
-  const isOpen = header.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', isOpen);
-});
-
-document.querySelectorAll('.main-nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    header.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
+if (header && navToggle) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = header.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
   });
-});
+
+  document.querySelectorAll('.main-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 // Scroll reveal animation
 const revealEls = document.querySelectorAll('.reveal');

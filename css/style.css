@@ -156,6 +156,20 @@ em { font-style: italic; color: var(--gold); }
   transition: transform .25s ease, opacity .25s ease;
 }
 
+/* Promo bar — agendamento */
+.promo-bar { background: linear-gradient(100deg, var(--gold-light), var(--gold)); }
+.promo-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  padding: 14px 0;
+}
+.promo-bar p { margin: 0; font-size: 0.92rem; color: var(--ink); text-align: center; }
+.promo-bar strong { font-family: var(--serif); font-weight: 600; }
+.promo-bar .btn { padding: 10px 24px; font-size: 0.85rem; flex-shrink: 0; }
+
 /* ===== Hero ===== */
 .hero { position: relative; padding: 110px 0 80px; overflow: hidden; }
 .hero-inner {

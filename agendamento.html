@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agendar Horário | Priscila Vieira Nail Designer</title>
+<meta name="description" content="Agende seu horário com a Priscila Vieira: escolha o serviço, o dia e o horário em poucos cliques.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/agendamento.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="topo">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 100 60" aria-hidden="true">
+        <path d="M50 52 C41 44 38 30 50 18 C62 30 59 44 50 52 Z" transform="rotate(-42 50 52)"/>
+        <path d="M50 52 C39 41 35 22 50 6 C65 22 61 41 50 52 Z" transform="rotate(-21 50 52)"/>
+        <path d="M50 52 C39 41 35 22 50 6 C65 22 61 41 50 52 Z"/>
+        <path d="M50 52 C39 41 35 22 50 6 C65 22 61 41 50 52 Z" transform="rotate(21 50 52)"/>
+        <path d="M50 52 C41 44 38 30 50 18 C62 30 59 44 50 52 Z" transform="rotate(42 50 52)"/>
+      </svg>
+      <span class="logo-text">
+        <strong>Priscila Vieira</strong>
+        <em>nail designer</em>
+      </span>
+    </a>
+    <a href="index.html#topo" class="back-link">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 L9 12 L15 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Voltar ao site
+    </a>
+  </div>
+</header>
+
+<!-- ===== CAPA ===== -->
+<section class="booking-hero">
+  <div class="container booking-hero-inner">
+    <div class="booking-hero-copy reveal">
+      <p class="eyebrow"><span class="eyebrow-line"></span>Agendamento online</p>
+      <h1>Reserve seu horário <em>em poucos cliques.</em></h1>
+      <p class="lead">Escolha o serviço, o melhor dia e horário — e finalize direto pelo WhatsApp com a Priscila.</p>
+    </div>
+    <div class="booking-hero-media reveal">
+      <div class="hero-blob"></div>
+      <img src="assets/images/priscila-hero.png" alt="Priscila Vieira" class="hero-photo">
+    </div>
+  </div>
+</section>
+
+<!-- ===== WIZARD ===== -->
+<section class="booking-wizard">
+  <div class="container">
+
+    <div class="wizard-steps" id="wizardSteps">
+      <div class="wizard-step is-active" data-step="1"><span>1</span>Serviço</div>
+      <div class="wizard-step" data-step="2"><span>2</span>Data e horário</div>
+      <div class="wizard-step" data-step="3"><span>3</span>Confirmar</div>
+    </div>
+
+    <!-- STEP 1 — SERVIÇO -->
+    <div class="wizard-panel is-active" data-panel="1">
+      <div class="service-category">
+        <button class="category-toggle" type="button" aria-expanded="true">
+          <span>Alongamento em Gel</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="category-body">
+          <button class="service-card" type="button" data-service="Alongamento Molde F1" data-duration="2h" data-price="R$ 120">
+            <span class="service-info">
+              <strong>Alongamento Molde F1</strong>
+              <small>Técnica exclusiva, acabamento uniforme e curvatura natural.</small>
+            </span>
+            <span class="service-meta">
+              <span class="service-price">R$ 120</span>
+              <span class="service-duration">2h</span>
+            </span>
+          </button>
+          <button class="service-card" type="button" data-service="Alongamento Mold Russo + F1" data-duration="2h30" data-price="R$ 150">
+            <span class="service-info">
+              <strong>Alongamento Mold Russo + F1</strong>
+              <small>Técnica híbrida, mais resistente e com acabamento fino.</small>
+            </span>
+            <span class="service-meta">
+              <span class="service-price">R$ 150</span>
+              <span class="service-duration">2h30</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="service-category">
+        <button class="category-toggle" type="button" aria-expanded="false">
+          <span>Manutenção</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="category-body" hidden>
+          <button class="service-card" type="button" data-service="Manutenção de Alongamento" data-duration="1h30" data-price="R$ 80">
+            <span class="service-info">
+              <strong>Manutenção de Alongamento</strong>
+              <small>Reforço e ajuste do alongamento já feito.</small>
+            </span>
+            <span class="service-meta">
+              <span class="service-price">R$ 80</span>
+              <span class="service-duration">1h30</span>
+            </span>
+          </button>
+          <button class="service-card" type="button" data-service="Manutenção + Esmaltação em Gel" data-duration="1h45" data-price="R$ 100">
+            <span class="service-info">
+              <strong>Manutenção + Esmaltação em Gel</strong>
+              <small>Manutenção com esmaltação em gel incluída.</small>
+            </span>
+            <span class="service-meta">
+              <span class="service-price">R$ 100</span>
+              <span class="service-duration">1h45</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="service-category">
+        <button class="category-toggle" type="button" aria-expanded="false">
+          <span>Esmaltação e Nail Art</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="category-body" hidden>
+          <button class="service-card" type="button" data-service="Esmaltação em Gel" data-duration="1h" data-price="R$ 60">
+            <span class="service-info">
+              <strong>Esmaltação em Gel</strong>
+              <small>Aplicação de esmaltação em gel de longa duração.</small>
+            </span>
+            <span class="service-meta">
+              <span class="service-price">R$ 60</span>
+              <span class="service-duration">1h</span>
+            </span>
+          </button>
+          <button class="service-card" type="button" data-service="Nail Art / Decoração" data-duration="45min" data-price="R$ 40">
+            <span class="service-info">
+              <strong>Nail Art / Decoração</strong>
+              <small>Detalhes decorativos personalizados (adicional).</small>
+            </span>
+            <span class="service-meta">
+              <span class="service-price">R$ 40</span>
+              <span class="service-duration">45min</span>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <p class="price-note">*Valores e durações ilustrativos, sujeitos a confirmação com a Priscila.</p>
+    </div>
+
+    <!-- STEP 2 — DATA E HORÁRIO -->
+    <div class="wizard-panel" data-panel="2" hidden>
+      <p class="selected-recap" id="recapService"></p>
+
+      <div class="date-strip" id="dateStrip" role="group" aria-label="Escolha o dia"></div>
+
+      <div class="time-groups" id="timeGroups"></div>
+    </div>
+
+    <!-- STEP 3 — CONFIRMAR -->
+    <div class="wizard-panel" data-panel="3" hidden>
+      <div class="booking-summary" id="bookingSummary"></div>
+
+      <label class="booking-field">
+        Seu nome
+        <input type="text" id="clientName" placeholder="Como podemos te chamar?">
+      </label>
+
+      <a href="#" id="confirmWhatsapp" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+        <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        Confirmar pelo WhatsApp
+      </a>
+      <p class="booking-note">Como ainda não temos integração automática de agenda, sua escolha é enviada direto para o WhatsApp da Priscila, que confirma a disponibilidade com você.</p>
+    </div>
+
+    <div class="wizard-nav">
+      <button class="btn btn-ghost" id="wizardBack" type="button" hidden>Voltar</button>
+      <button class="btn btn-primary" id="wizardNext" type="button" disabled>Próximo</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg class="logo-mark small" viewBox="0 0 100 60" aria-hidden="true">
+        <path d="M50 52 C41 44 38 30 50 18 C62 30 59 44 50 52 Z" transform="rotate(-42 50 52)"/>
+        <path d="M50 52 C39 41 35 22 50 6 C65 22 61 41 50 52 Z" transform="rotate(-21 50 52)"/>
+        <path d="M50 52 C39 41 35 22 50 6 C65 22 61 41 50 52 Z"/>
+        <path d="M50 52 C39 41 35 22 50 6 C65 22 61 41 50 52 Z" transform="rotate(21 50 52)"/>
+        <path d="M50 52 C41 44 38 30 50 18 C62 30 59 44 50 52 Z" transform="rotate(42 50 52)"/>
+      </svg>
+      <div>
+        <strong>Priscila Vieira</strong>
+        <span>nail designer</span>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="https://wa.me/5519981163983" target="_blank" rel="noopener">Mensagem</a>
+      <a href="https://www.instagram.com/priscilavieiranails/" target="_blank" rel="noopener">Rede Social</a>
+      <a href="https://maps.app.goo.gl/8G2TW1twWCZWg89y7" target="_blank" rel="noopener">Localização</a>
+    </div>
+    <p class="footer-copy">Priscila Vieira &reg; Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/5519981163983?text=Ol%C3%A1%20Priscila%2C%20quero%20saber%20mais%20sobre%20o%20curso%20de%20Nail%20Designer!" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar com a Priscila no WhatsApp">
+  <span class="wa-icon">
+    <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+  </span>
+  <span class="wa-text">
+    <span class="wa-title">
+      <span class="wa-title-default">WhatsApp</span>
+      <span class="wa-title-hover">Fale com a Priscila</span>
+    </span>
+    <small>Tire suas dúvidas</small>
+  </span>
+</a>
+
+<script src="js/script.js"></script>
+<script src="js/agendamento.js"></script>
+</body>
+</html>
