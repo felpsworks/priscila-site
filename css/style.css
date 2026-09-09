@@ -262,9 +262,9 @@ em { font-style: italic; color: var(--gold); }
 .stats-band { background: var(--ink); padding: 42px 0; }
 .stats-band-inner {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(3, auto);
   justify-content: center;
-  gap: 10px 56px;
+  gap: 10px 64px;
 }
 .stats-band-inner div { position: relative; text-align: center; padding-top: 22px; }
 .stats-band-inner div::before {
