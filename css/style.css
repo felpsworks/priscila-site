@@ -617,13 +617,13 @@ em { font-style: italic; color: var(--gold); }
   gap: 50px;
   align-items: center;
 }
-.cta-media { position: relative; width: 340px; margin: 0 auto; }
+.cta-media { position: relative; width: 340px; margin: 0 auto; padding-bottom: 60px; }
 .cta-media::before {
   content: "";
   position: absolute;
-  top: 38%;
+  top: 34%;
   left: 50%;
-  width: 92%;
+  width: 118%;
   aspect-ratio: 1 / 1;
   transform: translateX(-50%);
   border-radius: 50%;
@@ -636,6 +636,8 @@ em { font-style: italic; color: var(--gold); }
   display: block;
   width: 100%;
   filter: drop-shadow(0 24px 30px rgba(0,0,0,0.5));
+  -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
 }
 .badge-limited {
   display: inline-block;
