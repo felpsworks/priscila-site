@@ -30,6 +30,39 @@ const observer = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => observer.observe(el));
 
+// Contador animado da faixa de números
+const statEls = document.querySelectorAll('.stats-band-inner strong');
+
+function animateCount(el) {
+  const match = el.textContent.trim().match(/^(\D*)(\d+)(\D*)$/);
+  if (!match) return;
+  const [, prefix, digits, suffix] = match;
+  const target = parseInt(digits, 10);
+  const duration = 1400;
+  const start = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = `${prefix}${Math.round(target * eased)}${suffix}`;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+const statsBand = document.querySelector('.stats-band');
+if (statsBand && statEls.length) {
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        statEls.forEach(animateCount);
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  statsObserver.observe(statsBand);
+}
+
 // Before/after comparison sliders
 document.querySelectorAll('.ba-frame').forEach(frame => {
   const handle = frame.querySelector('.ba-handle');
